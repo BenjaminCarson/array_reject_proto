@@ -1,4 +1,3 @@
-module.exports = arrReject;
 "use strict";
 
 ;(function(Array){
