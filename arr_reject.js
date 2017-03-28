@@ -19,11 +19,12 @@ module.exports = arrReject;
       throw new TypeError(fCallback+" is not a function");
     }
     
+    //Assure we are dealing with an array
     let arr = (((this) && ("length" in this) && ("map" in this) && (this)) || []);
 
     //Reduce down the array to a new, transformed array
     return arr.reduce(function(arrReject, element, index){
-        //To match the [].filter() logic, perform an loose "falsey" check
+        //To match the exact inverse of the [].filter() logic, perform an loose "falsey" check
         if (!(fCallback(element, index))){
           arrReject.push(element);
         }
